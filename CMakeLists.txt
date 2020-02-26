@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.7.2)
 
 project(game)
 
-find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
+set(CMAKE_CXX_STANDARD 17)
 
-aux_source_directory(. SRC_LIST)
-add_executable(${PROJECT_NAME} ${SRC_LIST})
-
-target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
+#add_subdirectory(GraphicsSfml)
+add_subdirectory(Application)
+add_subdirectory(GraphicsSfml)
+add_subdirectory(Library)
+add_subdirectory(Tests)
